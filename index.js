@@ -208,12 +208,9 @@ function isItAnApple(strings) {
  * [2] Invoking `removeApple` with `['a', 'b', 'c' ]` will return `[ 'a', 'b', 'c' ]`.
 */
 function removeApple(strings) {
-  let arr = []
-  strings.filter(function(s){
-    if (s !== 'apple')
-    arr.push(s)
-  })
-  return arr
+ return strings.filter(s => {
+   return s !== 'apple'
+ });
 }
 
 /**
@@ -232,10 +229,9 @@ function removeApple(strings) {
  * [2] Invoking `stringSmash` with `['a', 'b', 'c' ]` will return `abc`.
 */
 function stringSmash(strings) {
-  let arr = strings.reduce(function(s, a){
-    return s + a;
-  })
-  return arr
+ return strings.reduce((s, a) =>{
+    return s+a;
+  });
 }
 
 // A local community center is holding a fund raising 5k fun run and has invited
@@ -254,12 +250,12 @@ function stringSmash(strings) {
  * The full names appear in the array in the same order the runners appear in the `runners` array.
 */
 function getFullNames(runners) {
-  let last = []
-  runners.forEach(function(s, index){
-    const name = runners[index];
-    last.push(`${name.last_name}, ${name.first_name}`)
+ let arr =[];
+ runners.forEach(function(s){
+     arr.push(`${s.last_name}, ${s.first_name}`);
+     return
   })
-  return last;
+  return arr;
 }
 
 /**
